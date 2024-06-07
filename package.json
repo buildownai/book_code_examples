@@ -1,0 +1,24 @@
+{
+  "name": "book_code_examples",
+  "private": true,
+  "version": "1.0.0",
+  "description": "The code examples from the book Build Your Own AI",
+  "scripts": {
+    "lint": "bunx @biomejs/biome check --write"
+  },
+  "workspaces": ["examples/*"],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/buildownai/book_code_examples.git"
+  },
+  "keywords": ["llm", "ai", "typescript", "large", "language", "model", "gpt"],
+  "author": "Sebastian Wessel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/buildownai/book_code_examples/issues"
+  },
+  "homepage": "https://github.com/buildownai/book_code_examples#readme",
+  "devDependencies": {
+    "@biomejs/biome": "1.8.0"
+  }
+}
