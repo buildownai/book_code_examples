@@ -1,0 +1,24 @@
+{
+  "name": "@buildownai/examples_ollama",
+  "module": "The simple helper to interact with local Ollama",
+  "type": "module",
+  "private": "true",
+  "author": {
+    "name": "Sebastian Wessel"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/buildownai/book_code_examples.git"
+  },
+  "main": "./ollama.ts",
+  "scripts": {
+    "lint": "bunx @biomejs/biome check --write"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "ollama": "^0.5.1"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}

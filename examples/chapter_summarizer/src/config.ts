@@ -1,7 +1,7 @@
+import { config as baseConfig } from '@buildownai/examples_config'
+
 export const config = () => ({
-  llm: {
-    model: "llama3",
-  },
+  ...baseConfig(),
   inputDir: "./content/input",
   outputDir: "./content/output",
 });

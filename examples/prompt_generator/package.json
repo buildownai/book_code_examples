@@ -1,0 +1,48 @@
+{
+  "name": "@buildownai/examples_prompt_generator",
+  "module": "A generator that uses a llm model to generate a system prompt optimized for the choosen model",
+  "type": "module",
+  "private": "true",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/buildownai/book_code_examples.git"
+  },
+  "keywords": [
+    "gpt",
+    "llm",
+    "prompt",
+    "system prompt",
+    "generator"
+  ],
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "bunx --bun vite",
+    "lint": "bunx @biomejs/biome check --write"
+  },
+  "devDependencies": {
+    "@hono/vite-dev-server": "^0.12.1",
+    "@tailwindcss/typography": "^0.5.13",
+    "@types/bun": "latest",
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.38",
+    "tailwindcss": "^3.4.4",
+    "vite": "^5.2.13"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@inquirer/prompts": "^5.0.5",
+    "@microsoft/fetch-event-source": "^2.0.1",
+    "@types/markdown-it": "^14.1.1",
+    "@vitejs/plugin-vue": "^5.0.5",
+    "@vueuse/core": "^10.10.0",
+    "chalk": "^5.3.0",
+    "hono": "^4.4.4",
+    "ollama": "^0.5.1",
+    "vue": "^3.4.27",
+    "vue-markdown-render": "^2.2.1",
+    "@buildownai/examples_config": "*",
+    "@buildownai/examples_ollama": "*"
+  }
+}

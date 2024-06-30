@@ -6,19 +6,35 @@
   "scripts": {
     "lint": "bunx @biomejs/biome check --write"
   },
-  "workspaces": ["examples/*"],
+  "workspaces": [
+    "examples/*",
+    "shared/*"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/buildownai/book_code_examples.git"
   },
-  "keywords": ["llm", "ai", "typescript", "large", "language", "model", "gpt"],
+  "keywords": [
+    "llm",
+    "ai",
+    "typescript",
+    "large",
+    "language",
+    "model",
+    "gpt"
+  ],
   "author": "Sebastian Wessel",
-  "license": "ISC",
+  "license": "MITs",
   "bugs": {
     "url": "https://github.com/buildownai/book_code_examples/issues"
   },
-  "homepage": "https://github.com/buildownai/book_code_examples#readme",
+  "homepage": "https://buildown.ai",
   "devDependencies": {
-    "@biomejs/biome": "1.8.0"
+    "@biomejs/biome": "1.8.0",
+    "@types/bun": "latest"
+  },
+  "type": "module",
+  "peerDependencies": {
+    "typescript": "^5.0.0"
   }
 }

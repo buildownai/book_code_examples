@@ -1,4 +1,4 @@
-import ollama from 'ollama';
+import { ollama } from '@buildownai/examples_ollama';
 import { config } from './config.js';
 
 const systemPrompt = `You are an Author and your task is to summarize the given text from your book.
@@ -17,10 +17,13 @@ Use --- to separate the header.
 
 const summarize = async (content: string) => {
   const response = await ollama.generate({
-    model: config().llm.model,
+    model: config().model,
     prompt: content,
     system: systemPrompt,
-    stream: false
+    stream: false,
+    options: {
+      temperature: config().temperature
+    }
   });
 
   return response.response
