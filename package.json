@@ -1,6 +1,14 @@
 {
 	"name": "book_code",
 	"description": "The code snippets and examples from the book Build Own AI",
+	"author": {
+		"name": "Sebastian Wessel",
+		"url": "https://buildown.ai"
+	},
+	"license": "CC BY-NC 4.0",
+	"repository": {
+		"url": "https://github.com/buildownai/book_code_examples"
+	},
 	"workspaces": ["chapter/*"],
 	"private": "true",
 	"type": "module",
