@@ -1,0 +1,2 @@
+FROM granite3-dense:latest
+PARAMETER num_ctx 32768

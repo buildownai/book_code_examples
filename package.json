@@ -1,40 +1,18 @@
 {
-  "name": "book_code_examples",
-  "private": true,
-  "version": "1.0.0",
-  "description": "The code examples from the book Build Your Own AI",
-  "scripts": {
-    "lint": "bunx @biomejs/biome check --write"
-  },
-  "workspaces": [
-    "examples/*",
-    "shared/*"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/buildownai/book_code_examples.git"
-  },
-  "keywords": [
-    "llm",
-    "ai",
-    "typescript",
-    "large",
-    "language",
-    "model",
-    "gpt"
-  ],
-  "author": "Sebastian Wessel",
-  "license": "MITs",
-  "bugs": {
-    "url": "https://github.com/buildownai/book_code_examples/issues"
-  },
-  "homepage": "https://buildown.ai",
-  "devDependencies": {
-    "@biomejs/biome": "1.8.0",
-    "@types/bun": "latest"
-  },
-  "type": "module",
-  "peerDependencies": {
-    "typescript": "^5.0.0"
-  }
+	"name": "book_code",
+	"description": "The code snippets and examples from the book Build Own AI",
+	"workspaces": ["chapter/*"],
+	"private": "true",
+	"type": "module",
+	"scripts": {
+		"lint": "biome check --write --unsafe ."
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.9.3",
+		"@types/bun": "^1.1.12",
+		"@types/node": "^22.7.9"
+	},
+	"peerDependencies": {
+		"typescript": "^5.6.2"
+	}
 }

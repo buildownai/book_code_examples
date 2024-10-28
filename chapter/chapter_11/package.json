@@ -1,0 +1,24 @@
+{
+	"name": "chapter_11",
+	"type": "module",
+	"scripts": {
+		"dev": "bun run --hot src/poorman.ts",
+		"model": "ollama create buildownai -f ./Modelfile",
+		"chunks": "bun run src/md_to_knowledgebase.ts",
+		"qa": "bun run src/create_qa.ts",
+		"graph": "bun run src/create_knowledge_graph.ts",
+		"all": "bun run src/md_to_knowledgebase.ts && bun run src/create_qa.ts && bun run src/create_knowledge_graph.ts",
+		"db": "docker run --rm --pull always -p 8000:8000 surrealdb/surrealdb:latest start --user root --pass root --allow-all memory"
+	},
+	"dependencies": {
+		"hono": "^4.6.5",
+		"openai": "^4.68.1",
+		"surrealdb": "^1.0.6",
+		"zod": "^3.23.8",
+		"zod-to-json-schema": "^3.23.5"
+	},
+	"devDependencies": {
+		"@types/bun": "^1.1.11",
+		"@types/node": "^22.7.7"
+	}
+}
