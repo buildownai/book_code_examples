@@ -1,5 +1,17 @@
 {
 	"name": "chapter_11",
+	"description": "The source code for chapter 11 of the book Build Your Own AI.",
+	"author": {
+		"name": "Sebastian Wessel",
+		"url": "https://buildown.ai"
+	},
+	"license": "CC BY-NC 4.0",
+	"homepage": "https://buildown.ai",
+	"repository": {
+		"url": "https://github.com/buildownai/book_code_examples"
+	},
+	"keywords": ["llm", "ai", "typescript", "LLM", "book", "tutorial", "example"],
+	"private": true,
 	"type": "module",
 	"scripts": {
 		"dev": "bun run --hot src/poorman.ts",
