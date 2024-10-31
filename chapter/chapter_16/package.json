@@ -1,0 +1,31 @@
+{
+	"name": "chapter_16",
+	"description": "The source code for chapter 16 of the book Build Your Own AI.",
+	"author": {
+		"name": "Sebastian Wessel",
+		"url": "https://buildown.ai"
+	},
+	"license": "CC BY-NC 4.0",
+	"homepage": "https://buildown.ai",
+	"repository": {
+		"url": "https://github.com/buildownai/book_code_examples"
+	},
+	"keywords": ["llm", "ai", "typescript", "LLM", "book", "tutorial", "example"],
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"dev": "bun run --hot src/index.tsx"
+	},
+	"dependencies": {
+		"@types/markdown-it": "^14.1.2",
+		"hono": "^4.6.5",
+		"markdown-it": "^14.1.0",
+		"openai": "^4.68.1",
+		"zod": "^3.23.8",
+		"zod-to-json-schema": "^3.23.5"
+	},
+	"devDependencies": {
+		"@types/bun": "^1.1.11",
+		"@types/node": "^22.7.7"
+	}
+}
