@@ -59,7 +59,9 @@ const groupChunksByFileHeadlineAndSubheadline = (chunks: Chunk[]): string => {
 	return result
 }
 
-const getSystemMessage = (chunks: Chunk[]) => `You are an AI specialized to answer questions about PURISTA typescript backend framework based on the given context.
+const getSystemMessage = (
+	chunks: Chunk[],
+) => `You are an AI specialized to answer questions about PURISTA typescript backend framework based on the given context.
 
 Use the provided context to extract the related information.
 Your answer should only be based on the extracted information.

@@ -7,7 +7,9 @@ const client = new OpenAI({
 	apiKey,
 })
 
-const getSystemMessage = (context: string) => `You are an AI specialized to answer questions about PURISTA typescript backend framework based on the given context.
+const getSystemMessage = (
+	context: string,
+) => `You are an AI specialized to answer questions about PURISTA typescript backend framework based on the given context.
 
 Answer the users question based on the context provided.
 Do not refer to the context as "the context" or any other similar phrase. Instead, integrate it into your response seamlessly.

@@ -63,14 +63,14 @@ const knowledgeToolSchema = z.object({
 })
 
 const knowledgeTool = async (param: z.output<typeof knowledgeToolSchema>) => {
-		const graphAnswer = await getKnowledgeGraphAnswer(
-			param.question,
-			param.entities,
-		)
-		const chunkAnswer = await getChunkAnswer(param.question)
-		const qaAnswer = await getQuestionAnswerAnswer(param.question)
+	const graphAnswer = await getKnowledgeGraphAnswer(
+		param.question,
+		param.entities,
+	)
+	const chunkAnswer = await getChunkAnswer(param.question)
+	const qaAnswer = await getQuestionAnswerAnswer(param.question)
 
-		return `Here are three answers based on different source. You must combine these answers into a final response.
+	return `Here are three answers based on different source. You must combine these answers into a final response.
 Your answer must always be only based on the given answers.
 Do not refer to the context as "the context" or any other similar phrase. Instead, integrate it into your response seamlessly.
 If you don't know the answer, say only "I don't know" without further explainantion.
@@ -87,12 +87,10 @@ ${chunkAnswer}
 
 ${qaAnswer}
   `
-	}
+}
 
 const messagesToList = (msg: Message) =>
-		`<strong>${msg.role === 'user' ? 'You' : 'AI'}</strong><p>${msg.content.replaceAll('\n', '</br>')}</p></div>`
-
-
+	`<strong>${msg.role === 'user' ? 'You' : 'AI'}</strong><p>${msg.content.replaceAll('\n', '</br>')}</p></div>`
 
 app.get('/', (c) => {
 	const messagesToList = (msg: Message) =>
@@ -133,15 +131,14 @@ app.post('/knowledge', async (c) => {
 					function: {
 						name: 'knowledge_base',
 						function: knowledgeTool,
-            parse: (input: string) => {
-              const obj = JSON.parse(input)
-              return knowledgeToolSchema.parse(obj)
-            },
-            parameters: zodToJsonSchema(knowledgeToolSchema) as JSONSchema,
+						parse: (input: string) => {
+							const obj = JSON.parse(input)
+							return knowledgeToolSchema.parse(obj)
+						},
+						parameters: zodToJsonSchema(knowledgeToolSchema) as JSONSchema,
 						description:
 							'Get knowledge about PURISTA framework and programming and concepts',
-					}
-					
+					},
 				},
 			],
 		})
