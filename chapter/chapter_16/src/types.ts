@@ -4,7 +4,7 @@ export type Message = {
 }
 
 export type AgentState = {
-	facts: string
+	facts: string[]
 	description: string
-	checklist: string
+	checklist: { item: string; done: boolean }[]
 }

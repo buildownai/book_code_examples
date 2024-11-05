@@ -4,7 +4,7 @@ import type { FC } from 'hono/jsx'
 export const Layout: FC = ({ children }) => (
 	<html lang="en">
 		<head>
-			<title>Hono Chat Interface</title>
+			<title>Project Describer</title>
 			<script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,container-queries" />
 			<link
 				rel="stylesheet"

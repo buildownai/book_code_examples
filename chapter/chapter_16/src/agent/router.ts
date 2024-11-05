@@ -23,12 +23,12 @@ export const router = async () => {
 You should look at this message in isolation and determine where to best route there query.
 
 Use this context about the application and its features when determining where to route to:
+
 ${generalAppContext}
 
 Your options are as follows:
-<options>
+
 ${routerOptions}
-</options>
 
 A few of the recent messages in the chat history are:
 <recent-messages>

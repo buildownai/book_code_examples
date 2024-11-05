@@ -6,9 +6,9 @@ export const userConversationMessages: Message[] = []
 export const userConversationContext = createContext(userConversationMessages)
 
 export const agentState: AgentState = {
-	facts: '',
-	description: '',
-	checklist: '',
+	facts: ['The project is a software project'],
+	description: '# Project',
+	checklist: [{ item: 'What is the purpose of the project', done: false }],
 }
 
 export const agentStateContext = createContext(agentState)

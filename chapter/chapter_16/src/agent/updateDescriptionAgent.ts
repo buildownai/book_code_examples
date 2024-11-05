@@ -17,13 +17,13 @@ export const updateDescriptionAgent = async (stream: SSEStreamingApi) => {
 ${generalAppContext}
 
 You also have the following reflections on general memories/facts about the user to use when generating your response.
-<reflections>
+
 NEVER make any assumptions or guesses. Never include any information, fact or data that is not provided by the user.
 
 Especially never add or referr to any package, library, framework, tool or technology that is not mentioned by the user.
 
 The description is very objective only based on facts and user provided information.
-The description does not contain any explanations or justifications. It's purely factual
+The description only explains the project itself. It is written in easy to understand sentences.
 The description is hierarchical structured with sections for different aspects of the project.
 
 The description formated as markdown, using headers (h1-h6) and lists to represent the hierarchy.
@@ -31,25 +31,23 @@ The description formated as markdown, using headers (h1-h6) and lists to represe
 There is checklist and a list of facts managed internally. The checklist and facts are used to ask follow up questions when more information is needed.
 When a question answer does not require to update the description, only the checklist needs to be updated.
 The checklist and the facts are never visible to the user and you should never mention them.
-</reflections>
 
-Here is the current content of the project description:
-<artifact>
-${agentState.description}
-</artifact>
+Here is the list of facts:
 
-Here are the facts:
-<facts>
-${agentState.facts}
-</facts>
+${agentState.facts.map((fact) => `- ${fact}`).join('\n')}
 
 Instructions:
 
-- the description must be concisely and accurately reflect the provided facts.
+- the description must be concisely and accurately reflect the provided facts in easy to understand sentences.
 - the description must not include any information that is not explicitly stated in the facts or provided by the user.
-- ensure that different paragraphs are always aligned with the facts and user information
+- Structure the description hierarchically using headers (h1-h6) and lists to represent different aspects of the project.
+- ensure that different paragraphs are always based on the facts and user information
 - You never talk to the user directly
 - Never ask for more information or clarification
+
+Here is the current content of the project description:
+
+${agentState.description}
 
 You need to identify any information or change request from the users message and incorporate it into the existing description. If there are no changes requested, simply return the original description.
 Return only the updated description without any additional text or thoughts.

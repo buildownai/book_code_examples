@@ -16,9 +16,6 @@ app.post('/', async (c) => {
 	if (!body) {
 		return c.text('Invalid message', 400)
 	}
-	console.log()
-	console.log('User message:', body)
-	console.log()
 
 	userConversationMessages.push({
 		role: 'user',
@@ -47,7 +44,7 @@ app.post('/', async (c) => {
 
 		stream.writeSSE({
 			data: JSON.stringify({ data: md.render(content) }),
-			event: 'end-final-message',
+			event: 'final-message',
 			id: '0',
 		})
 
@@ -58,4 +55,9 @@ app.post('/', async (c) => {
 	})
 })
 
-export default app
+Bun.serve({
+	// 10 seconds:
+	idleTimeout: 60,
+
+	fetch: app.fetch,
+})

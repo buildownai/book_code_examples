@@ -1,6 +1,7 @@
 import type { SSEStreamingApi } from 'hono/streaming'
 import { defaultAgent } from './defaultAgent.js'
 import { finalAnswerAgent } from './finalAnswerAgent.js'
+import { markChecklistItemAsDoneAgent } from './markChecklistItemAsDoneAgent.js'
 import { router } from './router'
 import { updateChecklistAgent } from './updateChecklistAgent.js'
 import { updateDescriptionAgent } from './updateDescriptionAgent.js'
@@ -20,11 +21,12 @@ export const getTheAnswer = async (stream: SSEStreamingApi) => {
 	switch (routerChoice) {
 		case 'onlyUpdateChecklist':
 			await updateFactsAgent(stream)
-			await updateChecklistAgent(stream)
+			await markChecklistItemAsDoneAgent()
 			return defaultAgent()
 		case 'updateProjectDescription':
 			await updateFactsAgent(stream)
 			await updateDescriptionAgent(stream)
+			await markChecklistItemAsDoneAgent()
 			await updateChecklistAgent(stream)
 			break
 		default:
